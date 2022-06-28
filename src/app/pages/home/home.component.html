@@ -1,0 +1,11 @@
+<div class="container">
+  <header-component></header-component>
+  <section class="heroes-section">
+    <div class="section-title-container">
+      <h2>Personagens</h2>
+    </div>
+    <div class="heroes-container">
+      <card-component *ngFor="let hero of heroes" [name]="hero.name" [img]="hero.img" [description]="hero.realName"></card-component>
+    </div>
+  </section>
+</div>

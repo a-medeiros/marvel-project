@@ -1,0 +1,32 @@
+.img-wrapper {
+  height: 300px;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.content {
+  padding-top: 13px;
+}
+
+.card-title {
+  font-size: 15px;
+  color: #151515;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.card-secondary-text {
+  font-size: 12px;
+  color: #767676;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card:hover .card-title {
+  color: #ff0000;
+}
