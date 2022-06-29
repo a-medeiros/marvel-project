@@ -1,4 +1,7 @@
 .img-wrapper {
+  position: relative;
+  transition: transform 0.2s ease;
+  transform: translateY(0px);
   height: 300px;
   width: 200px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -25,6 +28,11 @@
   letter-spacing: 0.8px;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.card:hover .img-wrapper {
+  animation: mymove;
+  transform: translateY(-6px);
 }
 
 .card:hover .card-title {
