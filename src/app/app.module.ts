@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomePage } from './pages/home/home.component';
 import { HeaderComponent } from './components/Header/Header.component';
@@ -12,6 +13,7 @@ import { CardComponent } from './components/Card/Card.component';
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     RouterModule.forRoot([

@@ -5,7 +5,7 @@
       <h2>Personagens</h2>
     </div>
     <div class="heroes-container">
-      <card-component *ngFor="let hero of heroes" [name]="hero.name" [img]="hero.img" [description]="hero.realName"></card-component>
+      <card-component *ngFor="let character of characters" [name]="character.name" [img]="character.thumbnail.path + '.' + character.thumbnail.extension" (click)="getUsers()"></card-component>
     </div>
   </section>
 </div>
