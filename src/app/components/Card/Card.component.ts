@@ -7,7 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 
 export class CardComponent {
+  @Input() id: any;
   @Input() name: any;
   @Input() img: any;
   @Input() description: any;
+
+  selectedItem(id: string) {
+    console.log(id)
+  }
 }
