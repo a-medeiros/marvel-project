@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomePage } from './pages/home/home.component';
+import { ComicsPage } from './pages/comics/comics.component';
+
 import { HeaderComponent } from './components/Header/Header.component';
 import { CardComponent } from './components/Card/Card.component';
 
@@ -18,15 +20,18 @@ import { CardComponent } from './components/Card/Card.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomePage },
+      { path: 'comics', component: ComicsPage },
     ])
   ],
   declarations: [
     AppComponent,
     HomePage,
     HeaderComponent,
-    CardComponent
+    CardComponent,
+    ComicsPage
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

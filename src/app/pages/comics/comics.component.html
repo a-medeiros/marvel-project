@@ -1,0 +1,11 @@
+<div class="container">
+  <header-component></header-component>
+  <section class="section">
+    <div class="section-title-container">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="content-container">
+      <card-component *ngFor="let comic of comics" [name]="comic.title" [img]="comic.thumbnail.path + '.' + comic.thumbnail.extension" [id]="comic.id"></card-component>
+    </div>
+  </section>
+</div>

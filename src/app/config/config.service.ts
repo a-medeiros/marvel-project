@@ -16,6 +16,7 @@ console.log(hash);
 export class ConfigService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/users';
   private marvelCharactersEndpoint = `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
+  private marvelComicsEndpoint = `http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`;
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +24,12 @@ export class ConfigService {
     return this.http.get(this.apiUrl);
   }
 
+  // O Observable fica observando até a gente obter uma resposta do backend
   getCharacters(): Observable<any> {
     return this.http.get<any>(this.marvelCharactersEndpoint);
+  }
+
+  getComics(): Observable<any> {
+    return this.http.get<any>(this.marvelComicsEndpoint);
   }
 }

@@ -17,6 +17,7 @@
 
 .content {
   padding-top: 13px;
+  width: 200px;
 }
 
 .card-title {
@@ -24,6 +25,7 @@
   color: #151515;
   font-weight: 900;
   margin-bottom: 5px;
+  width: 100%;
 }
 
 .card-secondary-text {
