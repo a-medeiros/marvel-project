@@ -5,7 +5,15 @@
       <h2>Personagens</h2>
     </div>
     <div class="heroes-container">
-      <card-component *ngFor="let character of characters" [name]="character.name" [img]="character.thumbnail.path + '.' + character.thumbnail.extension" [id]="character.id"></card-component>
+      <card-component
+        *ngFor="let character of characters"
+        [name]="character.name"
+        [img]="character.thumbnail.path + '.' + character.thumbnail.extension"
+        [id]="character.id"
+        [routerLink]="['/character', character.id]"
+        type="character"
+      >
+      </card-component>
     </div>
   </section>
 </div>

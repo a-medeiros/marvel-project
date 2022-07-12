@@ -1,0 +1,28 @@
+<div class="container">
+  <header-component></header-component>
+  <section class="section">
+    <div class="section-title-container">
+      <h2>{{ character.name }}</h2>
+    </div>
+    <div class="content-container">
+      <div class="list-container">
+        <h3>HQs</h3>
+        <ul *ngFor="let comic of character.comics">
+          <li>{{ comic.name }}</li>
+        </ul>
+      </div>
+      <div class="list-container">
+        <h3>Histórias</h3>
+        <ul *ngFor="let storie of character.stories">
+          <li>{{ storie.name }}</li>
+        </ul>
+      </div>
+      <div class="list-container">
+        <h3>Séries</h3>
+        <ul *ngFor="let serie of character.series">
+          <li>{{ serie.name }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
