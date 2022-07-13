@@ -15,9 +15,9 @@ console.log(hash);
 export class ConfigService {
   private apiUrl = 'https://jsonplaceholder.typicode.com/users';
 
-  private marvelCharactersEndpoint = `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`;
+  private marvelCharactersEndpoint = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`;
 
-  private marvelComicsEndpoint = `http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`;
+  private marvelComicsEndpoint = `https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`;
 
 
   constructor(private http: HttpClient) {}
@@ -32,7 +32,7 @@ export class ConfigService {
   }
 
   getCharacterInformation(characterId: string): Observable<any> {
-    return this.http.get<any>(`http://gateway.marvel.com/v1/public/characters/${characterId}?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`)
+    return this.http.get<any>(`https://gateway.marvel.com/v1/public/characters/${characterId}?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`)
   }
 
   getComics(): Observable<any> {
