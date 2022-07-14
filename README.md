@@ -7,6 +7,3 @@ OBS: Todas as informações mostradas estão vindo de uma API da Marvel.
 - HTML
 - CSS
 - Angular
-
-## Deploy
-https://onlymarvelfans.netlify.app/
