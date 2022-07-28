@@ -32,3 +32,72 @@
   color: white;
   text-decoration: none;
 }
+
+.burger-container {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  right: 30px;
+}
+
+.line {
+  height: 7px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: white;
+  margin: 5px;
+}
+
+.scroll {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0
+}
+
+@media screen and (max-width: 790px) {
+  .navbar-links {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 503px) {
+  * {
+    overflow-x: hidden;
+  }
+
+  .open-menu {
+    width: 100%;
+    transition: ease 0.3s;
+  }
+
+  .close-menu {
+    width: 0%;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 8vh;
+    height: 92vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #000;
+    z-index: 1;
+  }
+
+  .link-wrapper {
+    margin: 40px 0px;
+  }
+
+  .burger-container {
+    display: block;
+  }
+
+  .container {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

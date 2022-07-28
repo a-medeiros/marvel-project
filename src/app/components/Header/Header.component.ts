@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 
 export class HeaderComponent {
   title = 'Header';
+  isMenuOpen: boolean = false;
+
+  openMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

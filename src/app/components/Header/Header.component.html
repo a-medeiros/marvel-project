@@ -1,5 +1,5 @@
 <div class="container">
-  <ul class="navbar-links">
+  <ul class="navbar-links" [ngClass]="isMenuOpen ? 'open-menu' : 'close-menu'">
     <li class="link-wrapper">
       <a class="link" routerLink="/">Personagens</a>
     </li>
@@ -13,4 +13,9 @@
       <a class="link">Stories</a>
     </li>
   </ul>
+  <div class="burger-container" (click)="openMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
 </div>

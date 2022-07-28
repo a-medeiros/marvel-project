@@ -12,6 +12,7 @@ import { CharacterPage } from './pages/character/character.component';
 
 import { HeaderComponent } from './components/Header/Header.component';
 import { CardComponent } from './components/Card/Card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { CardComponent } from './components/Card/Card.component';
       { path: '', component: HomePage },
       { path: 'comics', component: ComicsPage },
       { path: 'character/:id', component: CharacterPage },
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
