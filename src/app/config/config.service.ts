@@ -13,29 +13,25 @@ console.log(hash);
 })
 
 export class ConfigService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  apiUrl = 'https://gateway.marvel.com/v1/public/';
+  key = `?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`;
 
-  private marvelCharactersEndpoint = `https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`;
-
-  private marvelComicsEndpoint = `https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`;
-
-
-  constructor(private http: HttpClient) {}
-
-  getUsers() {
-    return this.http.get(this.apiUrl);
-  }
+  constructor(private http: HttpClient) { }
 
   // O Observable fica observando até a gente obter uma resposta do backend
   getCharacters(): Observable<any> {
-    return this.http.get<any>(this.marvelCharactersEndpoint);
+    return this.http.get<any>(this.apiUrl + 'characters' + this.key + '&limit=100');
   }
 
   getCharacterInformation(characterId: string): Observable<any> {
-    return this.http.get<any>(`https://gateway.marvel.com/v1/public/characters/${characterId}?ts=${ts}&apikey=${environment.publicKey}&hash=${hash}`)
+    return this.http.get<any>(this.apiUrl + 'characters/' + characterId + this.key);
   }
 
   getComics(): Observable<any> {
-    return this.http.get<any>(this.marvelComicsEndpoint);
+    return this.http.get<any>(this.apiUrl + 'comics' + this.key + '&limit=100');
+  }
+
+  getSeries(): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'series' + this.key + '&limit=100');
   }
 }

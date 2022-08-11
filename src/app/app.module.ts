@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomePage } from './pages/home/home.component';
 import { ComicsPage } from './pages/comics/comics.component';
 import { CharacterPage } from './pages/character/character.component';
+import { SeriesPage } from './pages/series/series.component';
 
 import { HeaderComponent } from './components/Header/Header.component';
 import { CardComponent } from './components/Card/Card.component';
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: '', component: HomePage },
       { path: 'comics', component: ComicsPage },
       { path: 'character/:id', component: CharacterPage },
+      { path: 'series', component: SeriesPage }
     ]),
     BrowserAnimationsModule
   ],
@@ -33,7 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     CardComponent,
     ComicsPage,
-    CharacterPage
+    CharacterPage,
+    SeriesPage
   ],
   providers: [],
   bootstrap: [AppComponent]

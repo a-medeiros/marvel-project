@@ -15,7 +15,7 @@ export class HomePage {
   characters: Character[] = [];
 
   // constructor é um método padrão das Classes. No Angular, ele é usado para injetar dependências no componente.
-  constructor(private configService: ConfigService) {}
+  constructor(private configService: ConfigService) { }
 
   // ngOnInit é executado toda vez que o componente é renderizado
   ngOnInit() {
@@ -24,10 +24,6 @@ export class HomePage {
     this.configService.getCharacters().subscribe(characters => {
       this.characters = characters.data.results;
     });
-  }
-
-  getUsers() {
-    this.configService.getUsers().subscribe(data => console.log(data));
   }
 
   getCharacters() {
