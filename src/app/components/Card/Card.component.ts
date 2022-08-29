@@ -11,8 +11,4 @@ export class CardComponent {
   @Input() name: any;
   @Input() img: any;
   @Input() description: any;
-
-  selectedItem(id: string) {
-    console.log(id)
-  }
 }

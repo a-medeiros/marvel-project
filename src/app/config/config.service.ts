@@ -34,4 +34,12 @@ export class ConfigService {
   getSeries(): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'series' + this.key + '&limit=100');
   }
+
+  getCharacterByName(name: string): Observable<any> {
+    if (name) {
+      return this.http.get<any>(this.apiUrl + 'characters' + this.key + '&limit=100' + `&nameStartsWith=${name}`);
+    } else {
+      return this.http.get<any>(this.apiUrl + 'characters' + this.key + '&limit=100');
+    }
+  }
 }

@@ -13,6 +13,7 @@ import { SeriesPage } from './pages/series/series.component';
 
 import { HeaderComponent } from './components/Header/Header.component';
 import { CardComponent } from './components/Card/Card.component';
+import { SearchComponent } from './components/Search/Search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardComponent,
     ComicsPage,
     CharacterPage,
-    SeriesPage
+    SeriesPage,
+    SearchComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

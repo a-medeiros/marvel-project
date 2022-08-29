@@ -4,15 +4,14 @@
     <div class="section-title-container">
       <h2>Personagens</h2>
     </div>
+    <div class="container-search">
+      <search-component (searchCharacter)="search($event)"></search-component>
+      <button class="search-button" (click)="getCharacterByName()">Pesquisar</button>
+    </div>
     <div class="heroes-container">
-      <card-component
-        *ngFor="let character of characters"
-        [name]="character.name"
-        [img]="character.thumbnail.path + '.' + character.thumbnail.extension"
-        [id]="character.id"
-        [routerLink]="['/character', character.id]"
-        type="character"
-      >
+      <card-component *ngFor="let character of characters" [name]="character.name"
+        [img]="character.thumbnail.path + '.' + character.thumbnail.extension" [id]="character.id"
+        [routerLink]="['/character', character.id]" type="character">
       </card-component>
     </div>
   </section>
