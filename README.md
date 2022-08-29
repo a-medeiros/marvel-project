@@ -15,6 +15,7 @@ Em desenvolvimento...
 - Listar personagens.
 - Listar histórias em quandinhos.
 - Exibir informações sobre um personagem quando usuário clica nele.
+- Pesquisar por um personagem.
 
 ## Instalação
 Clone este repositório:
