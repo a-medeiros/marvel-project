@@ -9,10 +9,13 @@
       <button class="search-button" (click)="getCharacterByName()">Pesquisar</button>
     </div>
     <div class="heroes-container">
-      <card-component *ngFor="let character of characters" [name]="character.name"
-        [img]="character.thumbnail.path + '.' + character.thumbnail.extension" [id]="character.id"
-        [routerLink]="['/character', character.id]" type="character">
+      <card-component *ngFor="let post of currentPosts" [name]="post.name"
+        [img]="post.thumbnail.path + '.' + post.thumbnail.extension" [id]="post.id"
+        [routerLink]="['/character', post.id]" type="character">
       </card-component>
     </div>
+    <mat-paginator class="pagination" [length]="characters.length" [pageSize]="postsPerPage"
+      [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" (page)="pageEvent(characters.length, $event)">
+    </mat-paginator>
   </section>
 </div>

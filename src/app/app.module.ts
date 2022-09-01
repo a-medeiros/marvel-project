@@ -16,6 +16,8 @@ import { CardComponent } from './components/Card/Card.component';
 import { SearchComponent } from './components/Search/Search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: 'character/:id', component: CharacterPage },
       { path: 'series', component: SeriesPage }
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ],
   declarations: [
     AppComponent,
