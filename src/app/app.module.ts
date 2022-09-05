@@ -17,6 +17,7 @@ import { SearchComponent } from './components/Search/Search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
       { path: 'series', component: SeriesPage }
     ]),
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     AppComponent,

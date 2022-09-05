@@ -40,6 +40,12 @@
   font-size: 15px;
 }
 
+.spinner-container {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width: 1356px) {
 
   .section-title-container,

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { heroes, Heroes } from './heroes';
 import { ConfigService } from 'src/app/config/config.service';
 import { Character } from 'src/app/models/characters.model';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'home-page',
@@ -13,12 +14,15 @@ export class HomePage {
   title = 'Heróis';
   heroes: Heroes[] = heroes;
   characters: Character[] = [];
+  isLoading: boolean = true;
   wantedCharacter: string = '';
   currentPage: number = 1;
   postsPerPage: number = 10;
   indexOfLastPost: number = this.currentPage * this.postsPerPage;
   indexOfFirstPost: number = this.indexOfLastPost - this.postsPerPage;
   currentPosts = this.characters.splice(this.indexOfFirstPost, this.indexOfLastPost);
+  color: ThemePalette = 'primary';
+  diameter: number = 40;
 
   // constructor é um método padrão das Classes. No Angular, ele é usado para injetar dependências no componente.
   constructor(private configService: ConfigService) { }
@@ -32,6 +36,7 @@ export class HomePage {
       console.log(results);
       this.characters = results;
       this.currentPosts = this.characters.slice(this.indexOfFirstPost, this.indexOfLastPost);
+      this.isLoading = false;
     });
   }
 
