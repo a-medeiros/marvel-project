@@ -20,9 +20,8 @@
     <div *ngIf="isLoading === false && characters.length === 0">
       <p>Não há nada para ver aqui!</p>
     </div>
-    <mat-paginator *ngIf="characters.length !== 0" class="pagination" [length]="characters.length"
-      [pageSize]="postsPerPage" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
-      (page)="pageEvent(characters.length, $event)">
+    <mat-paginator *ngIf="characters.length !== 0" class="pagination" [length]="total" [pageSize]="postsPerPage"
+      [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" (page)="pageEvent(characters.length, $event)">
     </mat-paginator>
   </section>
 </div>

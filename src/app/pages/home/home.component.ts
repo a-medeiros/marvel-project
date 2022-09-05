@@ -18,6 +18,7 @@ export class HomePage {
   wantedCharacter: string = '';
   currentPage: number = 1;
   postsPerPage: number = 10;
+  total: number = 0;
   indexOfLastPost: number = this.currentPage * this.postsPerPage;
   indexOfFirstPost: number = this.indexOfLastPost - this.postsPerPage;
   currentPosts = this.characters.splice(this.indexOfFirstPost, this.indexOfLastPost);
@@ -33,50 +34,31 @@ export class HomePage {
     // O subscribe nos notifica quando tivermos uma resposta.
     this.configService.getCharacters().subscribe(characters => {
       const { results } = characters.data;
-      console.log(results);
       this.characters = results;
+      this.total = this.characters.length;
       this.currentPosts = this.characters.slice(this.indexOfFirstPost, this.indexOfLastPost);
       this.isLoading = false;
     });
   }
-
-  // getCharacters() {
-  //   this.configService.getCharacters().subscribe(data => console.log(data));
-  // }
 
   search(value: string) {
     this.wantedCharacter = value;
   }
 
   getCharacterByName() {
-    console.log('click teste', this.wantedCharacter);
     this.configService.getCharacterByName(this.wantedCharacter).subscribe(searchCharacter => {
+      console.log(searchCharacter.data.results);
+      this.currentPosts = searchCharacter.data.results;
       this.characters = searchCharacter.data.results;
+      this.total = this.currentPosts.length;
     });
   }
 
-  changePostsPerPage(pageSize: number) {
-    this.postsPerPage = pageSize;
-    this.indexOfLastPost = this.currentPage * pageSize;
-    this.indexOfFirstPost = this.indexOfLastPost - pageSize;
-  }
-
-  changeCurrentPage(indexPage: number) {
-    this.currentPage = indexPage;
-    // this.indexOfLastPost = this.currentPage * this.postsPerPage;
-    this.currentPosts = this.characters.splice(this.indexOfFirstPost, this.indexOfLastPost);
-  }
-
   pageEvent(length: number, event: any) {
-    console.log('page event', length, event.pageSize, event);
     this.currentPage = event.pageIndex;
     this.postsPerPage = event.pageSize;
     this.indexOfLastPost = (event.pageIndex + 1) * event.pageSize;
     this.indexOfFirstPost = this.indexOfLastPost - event.pageSize;
-    console.log(this.indexOfFirstPost);
-    console.log(this.indexOfLastPost);
-    console.log(this.postsPerPage);
-    console.log(this.characters);
     this.currentPosts = this.characters.slice(this.indexOfFirstPost, this.indexOfLastPost);
   }
 }
