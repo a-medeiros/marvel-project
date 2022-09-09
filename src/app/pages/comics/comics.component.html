@@ -8,9 +8,15 @@
       <search-component (searchItem)="search($event)"></search-component>
       <button class="search-button" (click)="getComicByName()">Pesquisar</button>
     </div>
-    <div class="content-container">
+    <div class="spinner-container" *ngIf="isLoading">
+      <mat-spinner [color]="color" [diameter]="diameter"></mat-spinner>
+    </div>
+    <div class="content-container" *ngIf="isLoading === false && comics.length > 0">
       <card-component *ngFor="let comic of comics" [name]="comic.title"
         [img]="comic.thumbnail.path + '.' + comic.thumbnail.extension" [id]="comic.id" type="comic"></card-component>
+    </div>
+    <div *ngIf="isLoading === false && comics.length === 0">
+      <p>Não há nada para ver aqui!</p>
     </div>
   </section>
 </div>

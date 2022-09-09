@@ -23,6 +23,12 @@
   padding: 10px 0px 20px;
 }
 
+.spinner-container {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+}
+
 .search-button {
   background-color: #D32F2F;
   border: 1px solid #D32F2F;
