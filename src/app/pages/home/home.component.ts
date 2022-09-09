@@ -47,7 +47,6 @@ export class HomePage {
 
   getCharacterByName() {
     this.configService.getCharacterByName(this.wantedCharacter).subscribe(searchCharacter => {
-      console.log(searchCharacter.data.results);
       this.currentPosts = searchCharacter.data.results;
       this.characters = searchCharacter.data.results;
       this.total = this.currentPosts.length;

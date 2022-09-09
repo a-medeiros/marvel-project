@@ -42,4 +42,12 @@ export class ConfigService {
       return this.http.get<any>(this.apiUrl + 'characters' + this.key + '&limit=100');
     }
   }
+
+  getComicsByName(name: string) {
+    if (name) {
+      return this.http.get<any>(this.apiUrl + 'comics' + this.key + '&limit=100' + `&titleStartsWith=${name}`);
+    } else {
+      return this.http.get<any>(this.apiUrl + 'comics' + this.key + '&limit=100');
+    }
+  }
 }

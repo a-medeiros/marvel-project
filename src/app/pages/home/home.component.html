@@ -5,7 +5,7 @@
       <h2>Personagens</h2>
     </div>
     <div class="container-search">
-      <search-component (searchCharacter)="search($event)"></search-component>
+      <search-component (searchItem)="search($event)"></search-component>
       <button class="search-button" (click)="getCharacterByName()">Pesquisar</button>
     </div>
     <div class="spinner-container" *ngIf="isLoading">
