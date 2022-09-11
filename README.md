@@ -13,9 +13,10 @@ Em desenvolvimento...
 ## Funcionalidades
 - Layout responsivo.
 - Listar personagens.
-- Listar histórias em quandinhos.
+- Listar histórias em quadrinhos.
 - Exibir informações sobre um personagem quando usuário clica nele.
 - Pesquisar por um personagem.
+- Pesquisar por uma HQ.
 
 ## Instalação
 Clone este repositório:
