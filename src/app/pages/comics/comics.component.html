@@ -12,11 +12,14 @@
       <mat-spinner [color]="color" [diameter]="diameter"></mat-spinner>
     </div>
     <div class="content-container" *ngIf="isLoading === false && comics.length > 0">
-      <card-component *ngFor="let comic of comics" [name]="comic.title"
-        [img]="comic.thumbnail.path + '.' + comic.thumbnail.extension" [id]="comic.id" type="comic"></card-component>
+      <card-component *ngFor="let post of currentPosts" [name]="post.title"
+        [img]="post.thumbnail.path + '.' + post.thumbnail.extension" [id]="post.id" type="comic"></card-component>
     </div>
     <div *ngIf="isLoading === false && comics.length === 0">
       <p>Não há nada para ver aqui!</p>
     </div>
+    <mat-paginator *ngIf="comics.length !== 0" class="pagination" [length]="total" [pageSize]="postsPerPage"
+      [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" (page)="pageEvent(comics.length, $event)">
+    </mat-paginator>
   </section>
 </div>

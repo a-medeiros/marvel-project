@@ -21,7 +21,7 @@ export class HomePage {
   total: number = 0;
   indexOfLastPost: number = this.currentPage * this.postsPerPage;
   indexOfFirstPost: number = this.indexOfLastPost - this.postsPerPage;
-  currentPosts = this.characters.splice(this.indexOfFirstPost, this.indexOfLastPost);
+  currentPosts = this.characters.slice(this.indexOfFirstPost, this.indexOfLastPost);
   color: ThemePalette = 'primary';
   diameter: number = 40;
 
@@ -47,9 +47,11 @@ export class HomePage {
 
   getCharacterByName() {
     this.configService.getCharacterByName(this.wantedCharacter).subscribe(searchCharacter => {
-      this.currentPosts = searchCharacter.data.results;
       this.characters = searchCharacter.data.results;
-      this.total = this.currentPosts.length;
+      this.total = this.characters.length;
+      this.indexOfLastPost = 1 * this.postsPerPage;
+      this.indexOfFirstPost = this.indexOfLastPost - this.postsPerPage;
+      this.currentPosts = this.characters.slice(this.indexOfFirstPost, this.indexOfLastPost);
     });
   }
 
